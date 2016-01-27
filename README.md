@@ -10,15 +10,14 @@ makeCacheMatrix <- function(x = matrix()) {
     list(set=set, get=get, setinv=setinv, getinv=getinv)
 }
 
+
 cacheSolve <- function(x, ...) {
     inv <- x$getinverse()
     if(!is.null(inv))## if the inverse has already calculated {
         message("getting cached data.") ## do this
         return(inv)
     }
-    ## if it is not continue
-    
-    data <- x$get()
+    data <- x$get()   ## if it is not continue
     inv <- solve(data)
     x$setinverse(inv)
     inv
