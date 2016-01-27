@@ -1,7 +1,7 @@
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
     set <- function(y) {
-        x <<- y  # different environment form the current  
+        x <<- y  ## different environment form the current  
         inv <<- NULL
     }
     get <- function() x
@@ -12,11 +12,11 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
     inv <- x$getinverse()
-    if(!is.null(inv))# if the inverse has already calculated {
-        message("getting cached data.") # do this
+    if(!is.null(inv))## if the inverse has already calculated {
+        message("getting cached data.") ## do this
         return(inv)
     }
-    # if it is not continue
+    ## if it is not continue
     
     data <- x$get()
     inv <- solve(data)
